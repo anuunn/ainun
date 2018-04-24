@@ -1,0 +1,31 @@
+<html>
+<title>Tugas1.html</title>
+<head>
+<script>function loadXMLDoc(){
+var xmlhttp;
+if(window.XMLHttpRequest){//code untuk IE7+, Firefox, Chrome, Opera
+xmlhttp=new XMLHttpRequest();
+}else {//cose untuk IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function(){
+if(xmlhttp.readyState==4 && xmlhttp.status==200){
+document.getElementById("isi").innerHTML=xmlhttp.responseText;
+}}
+xmlhttp.open("GET","tugas1.xml", true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="isi">
+<h2>Daftar Nama Mahasiswa</h2>
+1.	Nur'aini <br> 
+2.	Wawan Safendi<br>
+3.	Ellen Ayu Saputri<br>
+4.	Muhammad Ramadhan Muttakin<br>
+5.	Reyhan Jovie Dwiputra<br>
+</div>
+<button type="button" onclick="loadXMLDoc()">Tampilkan data lengkap</button>
+</body>
+</html>
